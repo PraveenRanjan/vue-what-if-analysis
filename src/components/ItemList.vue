@@ -26,6 +26,7 @@
             <span> Amount diff %: {{header.diffPercentAmount}} **</span>
             <span > Show Amount diff in percent: {{header.showPercent}}</span>
             <button v-on:click="togglePercentDisplay">toggle</button>
+             <button v-on:click="accept">Accept</button>
         <div v-if="selectedItems.fromItem">
             <h1>From</h1>
                 {{selectedItems.fromItem.name}}
@@ -34,7 +35,7 @@
         <div v-if="selectedItems.toItem"><h1>to</h1>
         <span>{{selectedItems.toItem.name}}</span>
         </div>
-        
+        <input type="range" v-model.number="header.diffPercentAmount">{{header.diffPercentAmount}}
        
     </div>
     </div>
@@ -63,7 +64,8 @@ export default {
     methods: {
         ...mapActions([
             'selectItem',
-            'togglePercentDisplay'
+            'togglePercentDisplay',
+            'accept'
         ])
     }
 }

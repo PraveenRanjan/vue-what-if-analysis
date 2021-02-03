@@ -20,14 +20,14 @@
             <v-row>
                 <v-col lg="10">
                     <v-row style="margin: 0px;">
-                        <div class="card" v-for="(linkname,index) in itemList" :key="index">
+                        <div :class = "linkname.selected?'cardselected':'normal'" v-for="(linkname,index) in itemList" :key="index">
                             <div v-on:click="selectItem(index)">
                             <v-row class="label">
                                 <div><p style="font-weight: bold; font-size: 25px; padding-left: 12px;">{{linkname.name}}</p></div>
                                 <div><span :data-letters="linkname.amountParcent"></span></div>
                             </v-row>
                             <div><p style="padding-left: 0.8rem;">{{ linkname.companyName }}</p></div>
-                            <v-row class="label bottom">
+                            <v-row class="label">
                                 <div v-if="linkname.from">
                                    <div class="chip">Form</div>
                                 </div>
@@ -172,6 +172,23 @@ export default {
         border-radius: 20px;
         box-shadow: 3px 3px 7px 3px #8888884a;
         color: black;
+        margin: 0.5rem;
+    }
+    .normal {
+        width: 9rem;
+        height: 9rem;
+        border-radius: 20px;
+        box-shadow: 3px 3px 7px 3px #8888884a;
+        color: black;
+        margin: 0.5rem;
+    }
+    .cardselected {
+        width: 9rem;
+        height: 9rem;
+        border-radius: 20px;
+        box-shadow: 3px 3px 7px 3px #8888884a;
+        color: rgb(247, 242, 242);
+        background-color: black;
         margin: 0.5rem;
     }
     .card-green {

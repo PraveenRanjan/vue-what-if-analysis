@@ -68,6 +68,56 @@ export const store = new Vuex.Store({
         to: false,
         selected: false,
       },
+      {
+        index: 6,
+        name: "DIS",
+        companyName: "Allstate",
+        amount: 20766,
+        amountParcent: 1.02,
+        from: true,
+        to: false,
+        selected: false,
+      },
+      {
+        index: 7,
+        name: "EA",
+        companyName: "Bank New York Mellon",
+        amount: 8024,
+        amountParcent: 1.01,
+        from: true,
+        to: false,
+        selected: false,
+      },
+      {
+        index: 8,
+        name: "ED",
+        companyName: "Blackstone Group Inc",
+        amount: 18420,
+        amountParcent: 1.28,
+        from: true,
+        to: false,
+        selected: false,
+      },
+      {
+        index: 9,
+        name: "ETN",
+        companyName: "Eaton Corp",
+        amount: 20955.6,
+        amountParcent: 0.98,
+        from: true,
+        to: false,
+        selected: false,
+      },
+      {
+        index: 10,
+        name: "FB",
+        companyName: "facebook",
+        amount: 17414,
+        amountParcent: 0.92,
+        from: true,
+        to: false,
+        selected: false,
+      },
     ],
     selectedItems: {
       fromItem: null,
@@ -138,7 +188,7 @@ export const store = new Vuex.Store({
       // state.obj = {...state, header: {...state.header, diffAmount: diffAmount,
       //     diffPercentAmount: diffAmountPercent}}
       state.header.diffAmount = diffAmount;
-      state.header.diffPercentAmount = diffAmountPercent;
+      state.header.diffPercentAmount = diffAmountPercent.toFixed(2);
 
       console.log("state in SELECT_TO_ITEM:: ", state);
     },
